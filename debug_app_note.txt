@@ -1,0 +1,38 @@
+Linux in VMware
+	turn off automatically update in Ubuntu
+    apt update
+    install open ssh server
+        sudo apt install openssh-server
+        sudo systemctl enable ssh
+        sudo ufw allow ssh
+        test ssh from windows
+    install vscode
+    connect vscode to ubuntu virtual machine
+    Create hello world program
+		install build-essential
+        Install extension
+		Giao dien cua vscode
+		
+Linux in beagle bone black
+    Chuẩn bị sdcard 16Gb
+    Tải firmware
+        wget https://debian.beagleboard.org/images/bone-debian-9.12-imgtec-armhf-2020-04-06-4gb.img.xz
+    Giai nen firmware
+        unxz bone-debian-9.12-imgtec-armhf-2020-04-06-4gb.img.xz
+    Ghi firmware vao sdcard
+        sudo mkdir /media/usb
+        sudo dd if=/bone-debian-9.12-imgtec-armhf-2020-04-06-4gb.img of=/dev/sdb
+    config share network cho BBB
+        config mang tren windows
+        ping 192.168.7.1
+        sudo /sbin/route add default gw 192.168.7.1
+        echo "nameserver 8.8.8.8" >> /etc/resolv.conf
+        ping google.com
+        https://www.digikey.com/en/maker/blogs/how-to-connect-a-beaglebone-black-to-the-internet-using-usb#:~:text=Right%20Click%20on%20your%20computer,one%20below%20will%20pop%20up.&text=You%20now%20need%20to%20share,see%20the%20sharing%20options%20available.
+    connect vscode to BBB
+    instal gdb
+        sudo apt-get update
+        sudo apt-get install gdb
+    Create hello world program
+        Install extension
+        Khong can install build-essential vi tren image co san
